@@ -1,0 +1,100 @@
+/* START */
+%bg {
+	content: "";
+	display: inline-block;
+	width: 21px;
+	height: 21px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+.rs {
+	li {
+		display: inline-block;
+		margin: 0px 6px;
+	}
+	
+	a {
+		font-size: 0;
+	}
+	
+	[href*="instagram"]::after {
+		@extend %bg;
+		background-image: url('../../img/instagram.svg');
+	}
+	
+	[href*="github"]::after {
+		@extend %bg;
+		background-image: url('../../img/github.svg');
+	}
+	
+	[href*="twitter"]::after {
+		@extend %bg;
+		background-image: url('../../img/twitter.svg');
+	}
+	
+	[href*="linkedin"]::after {
+		@extend %bg;
+		background-image: url('../../img/linkedin.svg');
+	}
+}
+
+.menu_cta {
+	li {
+		cursor: pointer;
+	}
+	
+	[class*="bg-orange-500"] {
+		&:hover,
+		&:active {
+			background: orange;
+		}
+	}
+	
+	[class*="bg-gray-200"] {
+		&:hover,
+		&:active {
+			background: #dedede
+		}
+	}
+}
+
+.price_content li {
+	margin-left: 12px;
+	padding: 0px 0 3px 12px;
+	color: gray;
+	list-style-type: none;
+	list-style-image: url(../../img/check.svg);
+}
+
+@media screen and (max-width: 768px) {
+	.show_menu {
+		position: absolute;
+		z-index: 9999;
+		top: 120px;
+		left: 0px;
+		width: 100%;
+		height: calc( 100vh - 120px);
+		background: rgb(249 115 22);
+		text-align: center;
+	}
+	
+	.open {
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		padding-top: 36px;
+		
+		li {
+			color: white;
+			
+			&:hover,
+			&:active,
+			&.current-menu-item  {
+				font-weight: bold;
+				text-decoration: underline;
+			}
+		}
+	}
+}
