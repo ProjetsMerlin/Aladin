@@ -14,7 +14,7 @@
             </a>
         </h2>
         <div class="mb-8 text-gray-500">
-            <?= apply_filters('the_content', get_the_content(get_the_ID())) ; ?>
+            <?= apply_filters('the_content', get_the_excerpt(get_the_ID())) ; ?>
         </div>
         <div class="mt-auto flex items-end justify-between">
             <div class="flex items-center gap-2">
